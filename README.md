@@ -1,2 +1,2 @@
-# Racobot
-Bot para encontrar aulas disponibles
+# RacoBot 💻🕒✏️
+Bot para encontrar PCs disponibles en los laboratorios de la FIB
