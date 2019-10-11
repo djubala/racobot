@@ -4,7 +4,11 @@ from telegram.ext import CommandHandler
 from telegram.ext import MessageHandler
 
 def test(bot, update):
-    mensaje = "Esto es una *prueba* "
+    mensaje = "Esto es una *prueba*"
+    bot.send_message(chat_id=update.message.chat_id, text=mensaje, parse_mode=telegram.ParseMode.MARKDOWN)
+
+def b5(bot, update):
+    mensaje = "[Estado del B5](https://api.fib.upc.edu/v2/laboratoris/imatges/B5.png)"
     bot.send_message(chat_id=update.message.chat_id, text=mensaje, parse_mode=telegram.ParseMode.MARKDOWN)
 
 
@@ -17,6 +21,7 @@ dispatcher = updater.dispatcher
 
 # respuesta a los comandos
 dispatcher.add_handler(CommandHandler('test', test))
+dispatcher.add_handler(CommandHandler('b5', b5))
 
 # arranca el bot
 updater.start_polling()
