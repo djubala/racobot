@@ -4,7 +4,7 @@ from telegram.ext import CommandHandler
 from telegram.ext import MessageHandler
 
 def test(bot, update):
-    mensaje = "Esto es una **prueba** "
+    mensaje = "Esto es una *prueba* "
     bot.send_message(chat_id=update.message.chat_id, text=mensaje, parse_mode=telegram.ParseMode.MARKDOWN)
 
 
