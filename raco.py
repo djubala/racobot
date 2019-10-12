@@ -4,6 +4,7 @@ from datetime import datetime, date
 from os import remove
 
 global db
+cliente = 'client_id=zN7ikID1R4aBfNIhZ0tgFogSXKdF348NnXzFbl6F'
 
 def descarga_imagen(img, url):
     r = requests.get(url, allow_redirects=True)
@@ -16,10 +17,9 @@ def init_db():
     f = open('db.json', 'r')
     dbaux = f.read()
     f.close()
+    global db
     db = json.loads(dbaux)
     
-
-cliente = 'client_id=zN7ikID1R4aBfNIhZ0tgFogSXKdF348NnXzFbl6F'
 def aules_disponibles(aula):
     response = requests.get('https://api.fib.upc.edu/v2/laboratoris/?'+cliente,headers={'accept': 'application/json'})
     result = response.json()
@@ -34,14 +34,13 @@ def reservar(aula, data_fi):
     timeF = today.strftime("%Y-%m-%d")
     print(timeF)
     actMin =  datetime.now().hour*60 +datetime.now().minute
-    actMin = 540
     print(datetime.now().hour)
     print(datetime.now().minute)
     response = requests.get('https://api.fib.upc.edu/v2/laboratoris/reserves/?page=16&'+cliente, headers={'accept': 'application/json'})
     result = response.json()
     for a in result["results"]:
         if a["laboratori"].lower() == aula.lower():
-            if (a["inici"].lower()).startswith("2019-10-15"):#Depende del array de las reservas de hoy, esto quizas no sea necesario
+            if (a["inici"].lower()).startswith(timeF):#Depende del array de las reservas de hoy, esto quizas no sea necesario
                 iniAux = (a["inici"][11:]).split(":")
                 fiAux = (a["fi"][11:]).split(":")
                 resAux = data_fi.split(":")
@@ -56,5 +55,33 @@ def reservar(aula, data_fi):
     
     return [True,""]
 
-
-#init_db()
+def filtrar_aulas(filtros, valores, edificio):
+    try:
+        aulas = []
+        iaulas = []
+        
+        if edificio is None:
+            for e in db:
+                for a in db[e]:
+                    aulas.append(a);
+                    iaulas.append(db[e][a])
+        else:
+            for a in db[edificio]:
+                aulas.append(a);
+                iaulas.append(db[edificio][a])
+        
+        next_aulas = []
+        next_iaulas = []
+        for f in range(0, len(filtros)):
+            for i in range(0, len(aulas)):
+                if iaulas[i][filtros[f]] == valores[f]:
+                    next_aulas.append(aulas[i])
+                    next_iaulas.append(iaulas[i])
+            aulas = next_aulas
+            iaulas = next_iaulas
+        return aulas
+    except Exception as e:
+        raise ValueError('El filtro ' + filtros[f] + ' no es valido')
+    
+init_db()
+print(filtrar_aulas(['pantalla_grande'], ['True'], 'c6'))

@@ -108,7 +108,7 @@
             "mac": "False",
             "so": "False"
         },
-        "cs302": {
+        "c6s302": {
             "equipo": "Intel Core i7-6700 3.40 Ghz 16 Gb RAM Nvdia Geforce 730 2Gb RAM, HD 1 Tb, Monitor HP L1940T",
             "cpu": "i7",
             "cpugen": "6",
@@ -116,7 +116,7 @@
             "mac": "False",
             "so": "False"
         },
-        "cs303": {
+        "c6s303": {
             "equipo": "Intel Core i5-3470 3.20 Ghz, 8 Gb RAM, Nvidia Geforce 210 1Gb, Monitor HP EliteDisplay E232 23\" IPS, DVD-RW",
             "cpu": "i5",
             "cpugen": "3",
@@ -124,7 +124,7 @@
             "mac": "False",
             "so": "False"
         },
-        "cs306": {
+        "c6s306": {
             "equipo": "Intel Core i5-3470 3.20 Ghz, 8 Gb RAM, Nvidia Geforce 210 1Gb, Monitor HP EliteDisplay E232 23\" IPS, DVD-RW",
             "cpu": "i5",
             "cpugen": "3",
@@ -132,7 +132,7 @@
             "mac": "False",
             "so": "False"
         },
-        "c6309": {
+        "c6s309": {
             "equipo": "Intel Core i7-8700 3.2 Ghz 16GB RAM, SSD 480 GB, Nvidia Geforce GT1030, Monitor HP 19\"",
             "cpu": "i7",
             "cpugen": "8",
