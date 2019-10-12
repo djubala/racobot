@@ -23,7 +23,7 @@ def envia_imagen(bot, update, url):
         remove(img)
     except Exception as e:
         print(e)
-        mensaje = "El comando es erroneo. Revise si los parametros son correctos"
+        mensaje = "Error"
         bot.send_message(chat_id=update.message.chat_id, text=mensaje, parse_mode=telegram.ParseMode.MARKDOWN)
 
 def imagen(bot, update, args):
@@ -39,7 +39,7 @@ def imagen(bot, update, args):
         elif a.lower().startswith('c6'):
             envia_imagen(bot, update, imgc6)
         else:
-            mensaje = 'Errorr: no se reconoce ' + a
+            mensaje = 'Error: no se reconoce ' + a
             bot.send_message(chat_id=update.message.chat_id, text=mensaje, parse_mode=telegram.ParseMode.MARKDOWN)
 
 # declara una constant amb el access token que llegeix de token.txt
