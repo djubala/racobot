@@ -2,6 +2,8 @@ import telegram
 from telegram.ext import Updater
 from telegram.ext import CommandHandler
 from telegram.ext import MessageHandler
+import requests
+from os import remove
 import raco
 
 imga5 = 'https://api.fib.upc.edu/v2/laboratoris/imatges/A5.png/?client_id=zN7ikID1R4aBfNIhZ0tgFogSXKdF348NnXzFbl6F'
@@ -12,20 +14,32 @@ def test(bot, update):
     mensaje = 'Esto es una *prueba*'
     bot.send_message(chat_id=update.message.chat_id, text=mensaje, parse_mode=telegram.ParseMode.MARKDOWN)
 
+def envia_imagen(bot, update, url):
+    try:
+        img = str(update.update_id)
+        r = requests.get(url, allow_redirects=True)
+        open(img, 'wb').write(r.content)
+        bot.send_photo(chat_id=update.message.chat_id, photo=open(img, 'rb'))
+        remove(img)
+    except Exception as e:
+        print(e)
+        mensaje = "El comando es erroneo. Revise si los parametros son correctos"
+        bot.send_message(chat_id=update.message.chat_id, text=mensaje, parse_mode=telegram.ParseMode.MARKDOWN)
+
 def imagen(bot, update, args):
     if len(args) == 0:
-        bot.send_photo(chat_id=update.message.chat_id, photo=imga5)
-        bot.send_photo(chat_id=update.message.chat_id, photo=imgb5)
-        bot.send_photo(chat_id=update.message.chat_id, photo=imgc6)
+        envia_imagen(bot, update, imga5)
+        envia_imagen(bot, update, imgb5)
+        envia_imagen(bot, update, imgc6)
     for a in args:
         if a.lower().startswith('a5'):
-            bot.send_photo(chat_id=update.message.chat_id, photo=imga5) 
+            envia_imagen(bot, update, imga5) 
         elif a.lower().startswith('b5'):
-            bot.send_photo(chat_id=update.message.chat_id, photo=imgb5)
+            envia_imagen(bot, update, imgb5)
         elif a.lower().startswith('c6'):
-            bot.send_photo(chat_id=update.message.chat_id, photo=imgc6)
+            envia_imagen(bot, update, imgc6)
         else:
-            mensaje = 'Erconoror: no se reconoce ' + a
+            mensaje = 'Errorr: no se reconoce ' + a
             bot.send_message(chat_id=update.message.chat_id, text=mensaje, parse_mode=telegram.ParseMode.MARKDOWN)
 
 # declara una constant amb el access token que llegeix de token.txt
