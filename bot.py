@@ -15,32 +15,32 @@ def test(bot, update):
     bot.send_message(chat_id=update.message.chat_id, text=mensaje, parse_mode=telegram.ParseMode.MARKDOWN)
 
 def envia_imagen(bot, update, url):
-    try:
-        img = str(update.update_id)
-        r = requests.get(url, allow_redirects=True)
-        open(img, 'wb').write(r.content)
-        bot.send_photo(chat_id=update.message.chat_id, photo=open(img, 'rb'))
-        remove(img)
-    except Exception as e:
-        print(e)
-        mensaje = "Error"
-        bot.send_message(chat_id=update.message.chat_id, text=mensaje, parse_mode=telegram.ParseMode.MARKDOWN)
+    img = str(update.update_id)
+    raco.descarga_imagen(img, url)
+    bot.send_photo(chat_id=update.message.chat_id, photo=open(img, 'rb'))
+    raco.borrar_imagen(img)
 
 def imagen(bot, update, args):
-    if len(args) == 0:
-        envia_imagen(bot, update, imga5)
-        envia_imagen(bot, update, imgb5)
-        envia_imagen(bot, update, imgc6)
-    for a in args:
-        if a.lower().startswith('a5'):
-            envia_imagen(bot, update, imga5) 
-        elif a.lower().startswith('b5'):
+    try:
+        if len(args) == 0:
+            envia_imagen(bot, update, imga5)
             envia_imagen(bot, update, imgb5)
-        elif a.lower().startswith('c6'):
             envia_imagen(bot, update, imgc6)
-        else:
-            mensaje = 'Error: no se reconoce ' + a
-            bot.send_message(chat_id=update.message.chat_id, text=mensaje, parse_mode=telegram.ParseMode.MARKDOWN)
+        for a in args:
+            if a.lower().startswith('a5'):
+                envia_imagen(bot, update, imga5) 
+            elif a.lower().startswith('b5'):
+                envia_imagen(bot, update, imgb5)
+            elif a.lower().startswith('c6'):
+                envia_imagen(bot, update, imgc6)
+            else:
+                mensaje = 'Error: no se reconoce ' + a
+                bot.send_message(chat_id=update.message.chat_id, text=mensaje, parse_mode=telegram.ParseMode.MARKDOWN)
+    except Exception as e:
+        print(e)
+            
+def hardware(bot, update, args):
+
 
 # declara una constant amb el access token que llegeix de token.txt
 TOKEN = open('token.txt').read().strip()
@@ -52,6 +52,7 @@ dispatcher = updater.dispatcher
 # respuesta a los comandos
 dispatcher.add_handler(CommandHandler('test', test))
 dispatcher.add_handler(CommandHandler('imagen', imagen, pass_args=True))
+dispatcher.add_handler(CommandHandler('hardware', hardware))
 
 # arranca el bot
 updater.start_polling()

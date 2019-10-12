@@ -1,0 +1,172 @@
+{ 
+    "edificio": [
+        {
+            "id": "a5",
+            "aula": [
+                {
+                    "id": "a5s102",
+                    "equipo": "Intel Core i7-6700 3.40 Ghz 16 Gb RAM Nvdia Geforce 730 2Gb RAM, HD 1 Tb, Monitor HP L1940T. 5 dels equips Intel Core i5 2400 3.10 Ghz 8GB RAM, Nvidia Geforce 210 1Gb, Monitor HP L1940T",
+                    "cpu": "i7",
+                    "cpugen": "6",
+                    "pantalla_grande": "False",
+                    "mac": "False",
+                    "so": "False"
+                },
+                {
+                    "id": "a5s103",
+                    "equipo": "Intel Core i7 4770 3.4 Ghz, 8GB RAM, Nvidia Geforce 210 1Gb, monitor HP L1951g 19\", DVD",
+                    "cpu": "i7",
+                    "cpugen": "4",
+                    "pantalla_grande": "False",
+                    "mac": "False",
+                    "so": "True"
+                },
+                {
+                    "id": "a5s104",
+                    "equipo": "Intel Core i7-8700 3.2 Ghz 16GB RAM, SSD 480 GB, Nvidia Geforce GT1030, Monitor HP 24\"",
+                    "cpu": "it",
+                    "cpugen": "8700",
+                    "pantalla_grande": "True",
+                    "mac": "False",
+                    "so": "False"
+                },
+                {
+                    "id": "a5s105",
+                    "equipo": "Intel Core i5-3470 3.20 Ghz, 8GB RAM, Nvidia Geforce 210 1Gb, monitor HP L1940T 19'', DVD-ROM",
+                    "cpu": "i5",
+                    "cpugen": "3",
+                    "pantalla_grande": "False",
+                    "mac": "False",
+                    "so": "False"
+                },
+                {
+                    "id": "a5s108",
+                    "equipo": "Intel Core i5-3470 3.20 Ghz, 8Gb RAM, Nvidia Geforce 210 1Gb, monitor HP L1940T 19'' DVD-RW",
+                    "cpu": "i5",
+                    "cpugen": "3",
+                    "pantalla_grande": "False",
+                    "mac": "False",
+                    "so": "False"
+                },
+                {
+                    "id": "a52109",
+                    "equipo": "Intel Core i7-8700 3.2 Ghz 16GB RAM, SSD 480 GB, Nvidia Geforce GT1030, Monitor HP 19\"",
+                    "cpu": "i7",
+                    "cpugen": "",
+                    "pantalla_grande": "False",
+                    "mac": "False",
+                    "so": "False"
+                },
+                {
+                    "id": "a5s111",
+                    "equipo": "Intel Core i7 4770 3.4 Ghz, 8GB RAM, Nvidia Geforce 210 1Gb, monitor HP L1951g 19\", DVD",
+                    "cpu": "i7",
+                    "cpugen": "4",
+                    "pantalla_grande": "False",
+                    "mac": "False",
+                    "so": "True"
+                },
+                {
+                    "id": "a5s112",
+                    "equipo": "Intel Core i7 4770 3.4 Ghz, 8GB RAM, Nvidia Geforce 210 1Gb, monitor HP L1951g 19\", DVD",
+                    "cpu": "i7",
+                    "cpugen": "4",
+                    "pantalla_grande": "False",
+                    "mac": "False",
+                    "so": "True"
+                },
+                {
+                    "id": "a5s113",
+                    "equipo": "Intel Core i7 4770 3.4 Ghz, 8GB RAM, Nvidia Geforce 210 1Gb, monitor HP L1951g 19\", DVD",
+                    "cpu": "i7",
+                    "cpugen": "4",
+                    "pantalla_grande": "False",
+                    "mac": "False",
+                    "so": "False"
+                }
+            ]
+        },
+        {
+            "id": "b5",
+            "aula": [
+                {
+                    "id": "b5s101",
+                    "equipo": "Intel Core i7-4770 3.4 Ghz. 8GB RAM, Nvidia Geforce 210 1Gb, Monitor HP L1950g TFT 19\". DVD-ROM",
+                    "cpu": "i7",
+                    "cpugen": "4",
+                    "pantalla_grande": "False",
+                    "mac": "False",
+                    "so": "False"
+                },
+                {
+                    "id": "b5s201",
+                    "equipo": "Intel Core i7-4770 3.4 Ghz. 8GB RAM, Nvidia Geforce 210 1Gb, Monitor HP L1950g TFT 19\". DVD-ROM",
+                    "cpu": "i7",
+                    "cpugen": "4",
+                    "pantalla_grande": "False",
+                    "mac": "False",
+                    "so": "False"
+                },
+                {
+                    "id": "b5s202",
+                    "equipo": "Inteore i7-4770 3.4 Ghz. 8GB RAM, Nvidia Geforce 210 1Gb, Monitor HP L1950g TFT 19\". DVD-ROM",
+                    "cpu": "i7",
+                    "cpugen": "4",
+                    "pantalla_grande": "False",
+                    "mac": "False",
+                    "so": "False"
+                }
+            ]
+        },
+        {
+            "id": "c6",
+            "aula": [
+                {
+                    "id": "c6s301",
+                    "equipo": "Intel Core i5-3470 3.20 Ghz, 8 Gb RAM, Nvidia Geforce 210 1Gb, monitor HP L1750 19\" TFT, DVD-RW",
+                    "cpu": "i5",
+                    "cpugen": "3",
+                    "pantalla_grande": "False",
+                    "mac": "False",
+                    "so": "False"
+                },
+                {
+                    "id": "cs302",
+                    "equipo": "Intel Core i7-6700 3.40 Ghz 16 Gb RAM Nvdia Geforce 730 2Gb RAM, HD 1 Tb, Monitor HP L1940T",
+                    "cpu": "i7",
+                    "cpugen": "6",
+                    "pantalla_grande": "False",
+                    "mac": "False",
+                    "so": "False"
+                },
+                {
+                    "id": "cs303",
+                    "equipo": "Intel Core i5-3470 3.20 Ghz, 8 Gb RAM, Nvidia Geforce 210 1Gb, Monitor HP EliteDisplay E232 23\" IPS, DVD-RW",
+                    "cpu": "i5",
+                    "cpugen": "3",
+                    "pantalla_grande": "True",
+                    "mac": "False",
+                    "so": "False"
+                },
+                {
+                    "id": "cs306",
+                    "equipo": "Intel Core i5-3470 3.20 Ghz, 8 Gb RAM, Nvidia Geforce 210 1Gb, Monitor HP EliteDisplay E232 23\" IPS, DVD-RW",
+                    "cpu": "i5",
+                    "cpugen": "3",
+                    "pantalla_grande": "True",
+                    "mac": "False",
+                    "so": "False"
+                },
+                {
+                    "id": "c6309",
+                    "equipo": "Intel Core i7-8700 3.2 Ghz 16GB RAM, SSD 480 GB, Nvidia Geforce GT1030, Monitor HP 19\"",
+                    "cpu": "i7",
+                    "cpugen": "8",
+                    "pantalla_grande": "True",
+                    "mac": "False",
+                    "so": "False"
+                }
+            ]
+        }
+    ]
+}
