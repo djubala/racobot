@@ -20,12 +20,39 @@ def init_db():
     global db
     db = json.loads(dbaux)
     
-def aules_disponibles(aula):
+def aules_disponibles(edificio, filtrar):
     response = requests.get('https://api.fib.upc.edu/v2/laboratoris/?'+cliente,headers={'accept': 'application/json'})
     result = response.json()
+    lista_aulas = []
     for a in result["results"]:
         if len(a["reserves_actuals"]) == 0 and a["places_disponibles"] is not None and a["places_disponibles"]>0:
-            print(a["id"]+" : "+str(a["places_disponibles"]))
+            if filtrar is not None:
+                if (a["id"].lower()) in filtrar:
+                    if edificio is not None:
+                        if (a["id"].lower()).startswith(edificio.lower()):
+                            aux = []
+                            aux.append(a["id"])
+                            aux.append(a["places_disponibles"])
+                            lista_aulas.append(aux)
+                    else:
+                        aux = []
+                        aux.append(a["id"])
+                        aux.append(a["places_disponibles"])
+                        lista_aulas.append(aux)
+  
+            else:
+                if edificio is not None:
+                    if (a["id"].lower()).startswith(edificio.lower()):
+                        aux = []
+                        aux.append(a["id"])
+                        aux.append(a["places_disponibles"])
+                        lista_aulas.append(aux)
+                else:
+                    aux = []
+                    aux.append(a["id"])
+                    aux.append(a["places_disponibles"])
+                    lista_aulas.append(aux)
+    return lista_aulas
     #print(rJson["imatges"]["B5"])
     
 
@@ -79,9 +106,22 @@ def filtrar_aulas(filtros, valores, edificio):
                     next_iaulas.append(iaulas[i])
             aulas = next_aulas
             iaulas = next_iaulas
+            next_aulas = []
+            next_iaulas = []
         return aulas
     except Exception as e:
         raise ValueError('El filtro ' + filtros[f] + ' no es valido')
-    
+
+def lista_edi():
+    try:
+        listaAux = []
+        global db  
+        for a in db:
+            listaAux.append(a)
+        return listaAux
+    except Exception as e:
+        print(e)
+        raise ValueError('No se ha podido leer los edificios correctamente')
+
 init_db()
-print(filtrar_aulas(['pantalla_grande'], ['True'], 'c6'))
+aules_disponibles("a","a")
